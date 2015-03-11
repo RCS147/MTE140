@@ -55,6 +55,7 @@ void Stack<DataType>::push(DataType newKey)
 	newNode -> next = top_;
 	newNode -> key = newKey;
 	top_ = newNode;
+	size_ ++;
 }
 
 template<class DataType>
@@ -65,6 +66,7 @@ DataType Stack<DataType>::pop()
 		Node* tmp = top_;
 		DataType value = tmp -> key;
 		top_ = top_ -> next;
+		size_ --;
 		
 		delete tmp;
 		return value;
